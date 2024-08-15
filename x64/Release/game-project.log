@@ -1,0 +1,6 @@
+﻿  win32_plataform.cpp
+C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(4,3): error C2337: 'in': atributo não encontrado
+C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(5,3): error C2337: 'in': atributo não encontrado
+C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(5,15): error C2337: 'optional': atributo não encontrado
+C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(6,3): error C2337: 'in': atributo não encontrado
+C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(7,3): error C2337: 'in': atributo não encontrado
