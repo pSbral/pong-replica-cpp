@@ -14,7 +14,7 @@ RenderState render_state;
 
 #include "renderer.cpp"
 
-LRESULT window_callback(
+LRESULT CALLBACK window_callback(
 	HWND    hWnd,
 	UINT    Msg,
 	WPARAM  wParam,
@@ -36,12 +36,12 @@ LRESULT window_callback(
 
 			int size = render_state.width * render_state.height * sizeof(unsigned int);
 
-			if (render_state.height) VirtualFree(render_state.memory, 0, MEM_RELEASE);
+			if (render_state.height) VirtualFree(render_state.memory, 0, MEM_RELEASE); // Liberar memória antiga, se existir
 			render_state.memory = VirtualAlloc(0, size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 
 			render_state.bitmap_info.bmiHeader.biSize = sizeof(render_state.bitmap_info.bmiHeader);
 			render_state.bitmap_info.bmiHeader.biWidth = render_state.width;
-			render_state.bitmap_info.bmiHeader.biHeight = render_state.height;
+			render_state.bitmap_info.bmiHeader.biHeight = -render_state.height; // Valor negativo inverte os eixos verticais
 			render_state.bitmap_info.bmiHeader.biPlanes = 1;
 			render_state.bitmap_info.bmiHeader.biBitCount = 32;
 			render_state.bitmap_info.bmiHeader.biCompression = BI_RGB;
@@ -62,6 +62,9 @@ int WinMain(
 	LPSTR     lpCmdLine,
 	int       nShowCmd
 ) {
+	// Inicializa a memória
+	render_state.memory = NULL;
+
 	//Criando a classe da janela de execução
 	WNDCLASS window_class = {};
 	window_class.style = CS_HREDRAW | CS_VREDRAW;
@@ -84,13 +87,15 @@ int WinMain(
 		CW_USEDEFAULT, CW_USEDEFAULT, 
 		1280, 720, 
 		0, 0, 
-		hInstance, 0);
-	HDC hdc = GetDC(window);
-
+		hInstance, 0
+	);
+	
 	if (!window) {
 		MessageBox(NULL, L"Falha ao criar a janela.", L"Erro", MB_OK | MB_ICONERROR);
 		return -1;
 	}
+
+	HDC hdc = GetDC(window);
 
 	// Loop de mensagens
 	while (window_exec) {
@@ -106,6 +111,14 @@ int WinMain(
 
 		//Render
 		StretchDIBits(hdc, 0, 0, render_state.width, render_state.height, 0, 0, render_state.width, render_state.height, render_state.memory, &render_state.bitmap_info, DIB_RGB_COLORS, SRCCOPY);
+	}
+
+	// Libera o HDC
+	ReleaseDC(window, hdc);
+
+	// Libera a memória alocada
+	if (render_state.memory) {
+		VirtualFree(render_state.memory, 0, MEM_RELEASE);
 	}
 
 	return 0;
