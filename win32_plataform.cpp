@@ -1,7 +1,6 @@
 #include <Windows.h>
 #include "utils.cpp"
 
-
 global_variable bool window_exec = true;
 
 struct RenderState
@@ -14,7 +13,9 @@ struct RenderState
 
 global_variable RenderState render_state;
 
+#include "plataform_common.cpp"
 #include "renderer.cpp"
+#include "game.cpp"
 
 LRESULT CALLBACK window_callback(
 	HWND    hWnd,
@@ -99,15 +100,56 @@ int WinMain(
 
 	HDC hdc = GetDC(window);
 
+	Input input = {};
+
+	float delta_time = 0.016666f;
+	LARGE_INTEGER frame_begin_time;
+	QueryPerformanceCounter(&frame_begin_time);
+
+	float performance_frequency;
+	{
+		LARGE_INTEGER perf;
+		QueryPerformanceFrequency(&perf);
+		performance_frequency = (float)perf.QuadPart;
+	}
+
 	// Loop de mensagens
 	while (window_exec) {
 		//Input
 		MSG msg = {};
+		
+		for (int i = 0; i < BUTTON_COUNT; i++) {
+			input.buttons[i].changed = false;
+		}
+
 		while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
 			switch (msg.message) {
 				case WM_KEYUP:
 				case WM_KEYDOWN: {
+					u32 vk_code = (u32)msg.wParam;
+					bool is_down = ((msg.lParam & (1 << 31)) == 0);
 
+					switch (vk_code)
+						{
+					case VK_UP: {
+						input.buttons[BUTTON_UP].is_down = is_down;
+						input.buttons[BUTTON_UP].changed = true;
+					} break;
+					case VK_DOWN: {
+						input.buttons[BUTTON_DOWN].is_down = is_down;
+						input.buttons[BUTTON_DOWN].changed = true;
+					} break;
+					case VK_LEFT: {
+						input.buttons[BUTTON_LEFT].is_down = is_down;
+						input.buttons[BUTTON_LEFT].changed = true;
+					} break;
+					case VK_RIGHT: {
+						input.buttons[BUTTON_RIGHT].is_down = is_down;
+						input.buttons[BUTTON_RIGHT].changed = true;
+					} break;
+					default:
+						break;
+					}
 				} break;
 
 				default: {
@@ -118,11 +160,15 @@ int WinMain(
 		}
 
 		//Simulate
-		clear_screen(0xff5500);
-		draw_rect(0, 0, 5, 5, 0x00ff22);
+		simulate_game(&input, delta_time);
 
 		//Render
 		StretchDIBits(hdc, 0, 0, render_state.width, render_state.height, 0, 0, render_state.width, render_state.height, render_state.memory, &render_state.bitmap_info, DIB_RGB_COLORS, SRCCOPY);
+		
+		LARGE_INTEGER frame_end_time;
+		QueryPerformanceCounter(&frame_end_time);
+		delta_time = (float)(frame_end_time.QuadPart - frame_begin_time.QuadPart) / performance_frequency;
+		frame_begin_time = frame_end_time;
 	}
 
 	// Libera o HDC

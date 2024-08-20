@@ -1,6 +1,6 @@
 ﻿  win32_plataform.cpp
-C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(5,1): warning C4091: 'static ': ignorado à esquerda de 'int' quando nenhuma variável é declarada
-C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(15,1): warning C4091: 'static ': ignorado à esquerda de 'int' quando nenhuma variável é declarada
+C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(4,1): warning C4091: 'static ': ignorado à esquerda de 'int' quando nenhuma variável é declarada
+C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(14,1): warning C4091: 'static ': ignorado à esquerda de 'int' quando nenhuma variável é declarada
 C:\Users\Pedro\Documents\Projects\game-project\game-project\renderer.cpp(1,1): warning C4091: 'static ': ignorado à esquerda de 'int' quando nenhuma variável é declarada
   (compilando o arquivo fonte 'win32_plataform.cpp')
   
@@ -23,6 +23,9 @@ C:\Users\Pedro\Documents\Projects\game-project\game-project\renderer.cpp(42,9): 
   (compilando o arquivo fonte 'win32_plataform.cpp')
   
 C:\Users\Pedro\Documents\Projects\game-project\game-project\renderer.cpp(43,9): warning C4244: 'inicializando': conversão de 'float' para 'int', possível perda de dados
+  (compilando o arquivo fonte 'win32_plataform.cpp')
+  
+C:\Users\Pedro\Documents\Projects\game-project\game-project\game.cpp(8,1): warning C4091: 'static ': ignorado à esquerda de 'int' quando nenhuma variável é declarada
   (compilando o arquivo fonte 'win32_plataform.cpp')
   
   game-project.vcxproj -> C:\Users\Pedro\Documents\Projects\game-project\x64\Debug\game-project.exe
