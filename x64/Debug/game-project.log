@@ -1,2 +1,2 @@
 ﻿  win32_plataform.cpp
-  game-project.vcxproj -> C:\Users\Pedro\Documents\Projects\game-project\x64\Debug\game-project.exe
+C:\Users\Pedro\Documents\Projects\game-project\game-project\win32_plataform.cpp(2,10): error C1083: Não é possível abrir arquivo incluir: 'utils.cpp': No such file or directory
