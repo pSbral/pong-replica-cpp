@@ -129,26 +129,17 @@ int WinMain(
 					u32 vk_code = (u32)msg.wParam;
 					bool is_down = ((msg.lParam & (1 << 31)) == 0);
 
-					switch (vk_code)
-						{
-					case VK_UP: {
-						input.buttons[BUTTON_UP].is_down = is_down;
-						input.buttons[BUTTON_UP].changed = true;
-					} break;
-					case VK_DOWN: {
-						input.buttons[BUTTON_DOWN].is_down = is_down;
-						input.buttons[BUTTON_DOWN].changed = true;
-					} break;
-					case VK_LEFT: {
-						input.buttons[BUTTON_LEFT].is_down = is_down;
-						input.buttons[BUTTON_LEFT].changed = true;
-					} break;
-					case VK_RIGHT: {
-						input.buttons[BUTTON_RIGHT].is_down = is_down;
-						input.buttons[BUTTON_RIGHT].changed = true;
-					} break;
-					default:
-						break;
+#define process_input(b, vk)\
+case vk: {\
+	input.buttons[b].changed = is_down != input.buttons[b].is_down;\
+	input.buttons[b].is_down = is_down;\
+} break;\
+
+					switch (vk_code) {
+						process_input(BUTTON_UP, VK_UP);
+						process_input(BUTTON_DOWN, VK_DOWN);
+						process_input(BUTTON_W, 'W');
+						process_input(BUTTON_S, 'S');
 					}
 				} break;
 
