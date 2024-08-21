@@ -8,6 +8,9 @@ enum {
 	BUTTON_DOWN,
 	BUTTON_W,
 	BUTTON_S,
+	BUTTON_A,
+	BUTTON_D,
+	BUTTON_SPACE,
 
 	BUTTON_COUNT, //Sempre como ultimo item
 };

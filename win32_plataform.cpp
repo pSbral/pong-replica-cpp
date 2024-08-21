@@ -68,10 +68,13 @@ int WinMain(
 	// Inicializa a memória
 	render_state.memory = NULL;
 
+	// Esconde o Cursor
+	ShowCursor(FALSE);
+
 	//Criando a classe da janela de execução
 	WNDCLASS window_class = {};
 	window_class.style = CS_HREDRAW | CS_VREDRAW;
-	window_class.lpszClassName = L"Game Window Class";
+	window_class.lpszClassName = L"Pongas";
 	window_class.lpfnWndProc = window_callback;
 	window_class.hInstance = hInstance;
 	window_class.hCursor = LoadCursor(NULL, IDC_ARROW);
@@ -92,6 +95,13 @@ int WinMain(
 		0, 0, 
 		hInstance, 0
 	);
+	{
+		//Fullscreen
+		SetWindowLong(window, GWL_STYLE, GetWindowLong(window, GWL_STYLE) & ~WS_OVERLAPPEDWINDOW);
+		MONITORINFO mi = { sizeof(mi) };
+		GetMonitorInfo(MonitorFromWindow(window, MONITOR_DEFAULTTOPRIMARY), &mi);
+		SetWindowPos(window, HWND_TOP, mi.rcMonitor.left, mi.rcMonitor.top, mi.rcMonitor.right - mi.rcMonitor.left, mi.rcMonitor.bottom - mi.rcMonitor.top, SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
+	}
 	
 	if (!window) {
 		MessageBox(NULL, L"Falha ao criar a janela.", L"Erro", MB_OK | MB_ICONERROR);
@@ -140,6 +150,9 @@ case vk: {\
 						process_input(BUTTON_DOWN, VK_DOWN);
 						process_input(BUTTON_W, 'W');
 						process_input(BUTTON_S, 'S');
+						process_input(BUTTON_A, 'A');
+						process_input(BUTTON_D, 'D');
+						process_input(BUTTON_SPACE, VK_SPACE);
 					}
 				} break;
 
