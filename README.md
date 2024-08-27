@@ -1,4 +1,4 @@
-# Game Project
+# Pong Replica | C++
 
 Welcome to the Game Project! This repository contains the source code and assets for an exciting game we're developing. Below you'll find information on how to get started, build the project, and contribute.
 
