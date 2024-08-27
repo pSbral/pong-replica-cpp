@@ -1,6 +1,6 @@
 # Pong Replica | C++
 
-Welcome to the Game Project! This repository contains the source code and assets for an exciting game we're developing. Below you'll find information on how to get started, build the project, and contribute.
+This repository contains a copy of the gme Pong, built using native C++. The game suports both single-player and local versus, including a score system for each of the sides.
 
 ## Table of Contents
 
