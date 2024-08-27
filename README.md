@@ -37,17 +37,17 @@ Make sure you have the following installed on your system:
    cd game-project
    ```
 
-Running the Game
+## Running the Game
 To run the game, open the project on Visual Studio and execute it. The window should open with the game already initialized.
 
-Usage
+## Usage
 Provide a brief overview of how to use the game. This can include controls, gameplay mechanics, and any other relevant information.
 
-Control 1: Move up and down using "W" and "A"
-Control 2: Move up and down using the arrow keys (Multiplayer only)
-Gameplay: Do not let the ball hit your side of the screen
+- **Control 1**: Move up and down using "W" and "A"
+- **Control 2**: Move up and down using the arrow keys (Multiplayer only)
+- **Gameplay**: Do not let the ball hit your side of the screen
 
-Contributing
+## Contributing
 We welcome contributions to the Game Project! If you'd like to help out, please follow these guidelines:
 
 Fork the repository.
