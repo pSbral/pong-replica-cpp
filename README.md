@@ -33,7 +33,7 @@ Make sure you have the following installed on your system:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/pSbral/game-project.git
+   git clone https://github.com/pSbral/pong-replica-cpp.git
    cd game-project
    ```
 
