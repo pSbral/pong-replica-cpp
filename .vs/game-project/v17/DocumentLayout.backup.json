@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\win32_plataform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:win32_plataform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "win32_plataform.cpp",
               "DocumentMoniker": "C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\win32_plataform.cpp",
               "RelativeDocumentMoniker": "win32_plataform.cpp",
               "ToolTip": "C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\win32_plataform.cpp",
               "RelativeToolTip": "win32_plataform.cpp",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAYwGMAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAYwF4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-08-21T20:21:10.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "game.cpp",
-              "DocumentMoniker": "C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\game.cpp",
-              "RelativeDocumentMoniker": "game.cpp",
-              "ToolTip": "C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\game.cpp",
-              "RelativeToolTip": "game.cpp",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAIEAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-21T18:35:34.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "renderer.cpp",
-              "DocumentMoniker": "C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\renderer.cpp",
-              "RelativeDocumentMoniker": "renderer.cpp",
-              "ToolTip": "C:\\Users\\Pedro\\Documents\\Projects\\game-project\\game-project\\renderer.cpp",
-              "RelativeToolTip": "renderer.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-21T19:59:55.794Z",
               "EditorCaption": ""
             }
           ]
